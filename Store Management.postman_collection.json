@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "691607a2-6fe1-44ce-86e0-a03685c3f1ce",
+		"name": "Store Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "romi",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "romi@example.test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test1234",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/register",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/login?email=jono&password=test1234",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "jono"
+						},
+						{
+							"key": "password",
+							"value": "test1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNzM2YThkZjRkZGMxY2NjZTY2ZDMzOGMyNDE1NjA2Mjc0ZWRmZThjMzRlYmM5ZGJmNjc5ZWJhY2Y2Y2M3ZGFiYTg2ZTIyMWFiMTc0ZjljYjAiLCJpYXQiOjE2NDU5NTg5ODMuNDgyMjkxLCJuYmYiOjE2NDU5NTg5ODMuNDgyMywiZXhwIjoxNjc3NDk0OTgzLjQ3MjgxMSwic3ViIjoiOCIsInNjb3BlcyI6W119.AzU9ZGIYmNRAZ1VJ5rlJ5MVYXg_PlcDBbeTF9Ih7mPBpCwV_ZRoX0yYc7Phe7Gfeao9cP561EjlRwDts7uRi1_tylqxZAsdjPxpEB-bwdXeyCwuXUVPu7REpMsUrhJrRPGWeDGniwstlFuOpzW094tdENzH9HqMtT9onnJunp-TKVDWjzhoTtNQ_sAW5qikWKdPaO-yASMzAryCT4OIq9q0cZn02G1foWL7ut5YZTfQunr5HRz3N4zzZ-SZsRgk3YzAZ7HgGAIZI8zUyUhKuiSVglL9OWYFDIDdhijUZwK5_NsxrZrWchP5l2NzhywGpBBnPRbV_aM2ZEEB0137RBQgn_XV3oriZ6eMS6LOnzeicFl_wi74MvkhkdTOkLxwQ7GtVSKzyLg--o0cBnK_UzMO-qjZ55iHajwCgum7JKAqF26egfufeHFU0CqwBrGDNvsvCOutPb1S910h3BzWu-6rPPGuAvu-etZO76Gpr9ZnjRZrGs0VOGwb45ceZHIpD_YeoG87Hw4YvCoZiTG1Jv1zffKa-HNKZf16uWPgR_3uvphjCpvXJ_LNLw78cDVxrcg9o-HLH9vCqfRTcej5Ga2O5zNwslNJqfxZ5C1NJkom2TbMrGzHQ6q6KD-Bj5vfJBMnT6hA1uNr0WaqJP8GeRU-hKhe0SP4Ov4JKn9Nnpbk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "aqua",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "2000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/products",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiY2RhNjU4MWE5ZWVjNDk4OGU0MGM5MWUwMTQ1YTU5ZmJiZGEyMmNmMmFmOTY4Mjc0Nzc1MDFkYmVkMzEyOThjMjQwZDk1NzU3NTFjMzJlMjAiLCJpYXQiOjE2NDU5NjA0NTguMzU5ODA0LCJuYmYiOjE2NDU5NjA0NTguMzU5ODE2LCJleHAiOjE2Nzc0OTY0NTguMzI1OTQ5LCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.ALsnulM4XKohjAB186VxezPDfVIJNPfVffpmFnkjSOHJ_bw6eq9pm281RNtcLC9AWRLSOSQ7y0iZ-5N56ExnfsUq5w6UuB7CBHosPFJyriNnj-M2x0MHVUrP-GrtzJSOW-ygknZ3jC19G95HFKjbcZOgPtiAYwO01ANEDH-K3swEV974bs5q-Bw5Z9PcLxvDkHlhJO5Z7Dld27JSJs0eLwgfZJoOnYMODVYOmYW0vuF4iwrBZXU0RTDy4wVr9UGhxkfF4vKPFafvUF4e1jXL-fDZQQySDfSX_p5SragMVJno3QjZ29wg6n5yBgsRdJRMfh6pvpWxgkAKte-gMFU7RsIkg13nW-2wUhgLb_15F4DcLUGS1U6ks2-GAJTxm1uQrCTGTn3pxhsM6dtxRRUiaO-DrcI-AqQ4vKG-Snen5yhabhPOFHlD_Ss8xIuMInZRel3YkTsCE5kXB6r3Msu70FFz-PtCeK2VsbKGMJChSWCPL5abnMFC7qGt0R3HrTtGbCpFvsbJ8H7QQvYtvyOaMTmHdTalFS2fjRoT-QUYPXfcZzfLICeMphG0zAt49vpS73YlwBxEzVMR3oZTIKNIkYAkuF11DZ2vqrmwphJso2DrN-la41T3imN4wAMteeQlg9O3bEx921XJWX28w1_Br0qtt-0prxm40HXlneKk1SE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "sprite",
+							"type": "default"
+						},
+						{
+							"key": "stock",
+							"value": "10000",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/products/2",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiY2RhNjU4MWE5ZWVjNDk4OGU0MGM5MWUwMTQ1YTU5ZmJiZGEyMmNmMmFmOTY4Mjc0Nzc1MDFkYmVkMzEyOThjMjQwZDk1NzU3NTFjMzJlMjAiLCJpYXQiOjE2NDU5NjA0NTguMzU5ODA0LCJuYmYiOjE2NDU5NjA0NTguMzU5ODE2LCJleHAiOjE2Nzc0OTY0NTguMzI1OTQ5LCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.ALsnulM4XKohjAB186VxezPDfVIJNPfVffpmFnkjSOHJ_bw6eq9pm281RNtcLC9AWRLSOSQ7y0iZ-5N56ExnfsUq5w6UuB7CBHosPFJyriNnj-M2x0MHVUrP-GrtzJSOW-ygknZ3jC19G95HFKjbcZOgPtiAYwO01ANEDH-K3swEV974bs5q-Bw5Z9PcLxvDkHlhJO5Z7Dld27JSJs0eLwgfZJoOnYMODVYOmYW0vuF4iwrBZXU0RTDy4wVr9UGhxkfF4vKPFafvUF4e1jXL-fDZQQySDfSX_p5SragMVJno3QjZ29wg6n5yBgsRdJRMfh6pvpWxgkAKte-gMFU7RsIkg13nW-2wUhgLb_15F4DcLUGS1U6ks2-GAJTxm1uQrCTGTn3pxhsM6dtxRRUiaO-DrcI-AqQ4vKG-Snen5yhabhPOFHlD_Ss8xIuMInZRel3YkTsCE5kXB6r3Msu70FFz-PtCeK2VsbKGMJChSWCPL5abnMFC7qGt0R3HrTtGbCpFvsbJ8H7QQvYtvyOaMTmHdTalFS2fjRoT-QUYPXfcZzfLICeMphG0zAt49vpS73YlwBxEzVMR3oZTIKNIkYAkuF11DZ2vqrmwphJso2DrN-la41T3imN4wAMteeQlg9O3bEx921XJWX28w1_Br0qtt-0prxm40HXlneKk1SE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "lemineral",
+							"type": "default"
+						},
+						{
+							"key": "stock",
+							"value": "1000",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/products/1",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNzM2YThkZjRkZGMxY2NjZTY2ZDMzOGMyNDE1NjA2Mjc0ZWRmZThjMzRlYmM5ZGJmNjc5ZWJhY2Y2Y2M3ZGFiYTg2ZTIyMWFiMTc0ZjljYjAiLCJpYXQiOjE2NDU5NTg5ODMuNDgyMjkxLCJuYmYiOjE2NDU5NTg5ODMuNDgyMywiZXhwIjoxNjc3NDk0OTgzLjQ3MjgxMSwic3ViIjoiOCIsInNjb3BlcyI6W119.AzU9ZGIYmNRAZ1VJ5rlJ5MVYXg_PlcDBbeTF9Ih7mPBpCwV_ZRoX0yYc7Phe7Gfeao9cP561EjlRwDts7uRi1_tylqxZAsdjPxpEB-bwdXeyCwuXUVPu7REpMsUrhJrRPGWeDGniwstlFuOpzW094tdENzH9HqMtT9onnJunp-TKVDWjzhoTtNQ_sAW5qikWKdPaO-yASMzAryCT4OIq9q0cZn02G1foWL7ut5YZTfQunr5HRz3N4zzZ-SZsRgk3YzAZ7HgGAIZI8zUyUhKuiSVglL9OWYFDIDdhijUZwK5_NsxrZrWchP5l2NzhywGpBBnPRbV_aM2ZEEB0137RBQgn_XV3oriZ6eMS6LOnzeicFl_wi74MvkhkdTOkLxwQ7GtVSKzyLg--o0cBnK_UzMO-qjZ55iHajwCgum7JKAqF26egfufeHFU0CqwBrGDNvsvCOutPb1S910h3BzWu-6rPPGuAvu-etZO76Gpr9ZnjRZrGs0VOGwb45ceZHIpD_YeoG87Hw4YvCoZiTG1Jv1zffKa-HNKZf16uWPgR_3uvphjCpvXJ_LNLw78cDVxrcg9o-HLH9vCqfRTcej5Ga2O5zNwslNJqfxZ5C1NJkom2TbMrGzHQ6q6KD-Bj5vfJBMnT6hA1uNr0WaqJP8GeRU-hKhe0SP4Ov4JKn9Nnpbk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}api/products",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
